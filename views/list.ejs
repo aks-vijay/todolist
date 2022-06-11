@@ -1,0 +1,23 @@
+<%- include("header") -%> 
+    
+    <!-- To show today's day -->
+    <div class="box" id="heading">
+        <h1> <%= listTitle %> </h1>
+    </div>
+    
+    <!-- Capture toDoList from user and pass it in li -->
+    <div class="box">
+        <% for (let i = 0; i < toDoListItems.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= toDoListItems[i] %> </p> 
+            </div>
+        <% } %>
+
+    <!-- Get input from user and send it to POST route -->
+    <form class="item" action="/" method="post">
+        <input type="text" name="todo" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value=<%= listTitle %> >+</button>
+    </form>
+    </div>
+<%- include("footer") -%> 
